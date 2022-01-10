@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+
+    background-color: #fafbfc;
+
+}
+
+header {
+    background-color: blueviolet;
+    padding: 10px;
+    color: #FFF;
+    text-align: center;
+}
+
+main {
+    padding: 30px 50px;
+    
+}
+
+
+.card {
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.lineinput {
+    display: grid; /* Itens um abaixo do outro */
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: 0; /* para quando clicar para digitar a borda nao ficar preto*/
+}
+
+button {
+    border: 0px;
+    padding: 10px;
+    outline: 0;
+    background-color: blueviolet;
+    color: #FFF;
+    border-radius: 3px;
+    font-weight: bold; /* para letra ficar mais forte */
+    transition: all ease 0.3; /*efeito lento de entrada no bottao */
+}
+
+button:hover {
+    background-color: rgb(101, 37, 161);
+}
+
+.content {
+    margin-top: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+table th {
+    background-color: rgb(145, 131, 131);
+}
+
+table th, td {
+    padding: 1px 5px;
+    text-align: left;
+}
+
+table td img {
+    width: 22px;
+}
+
+.center {
+    text-align: center;
+}
+
