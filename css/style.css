@@ -31,7 +31,7 @@ main {
 }
 
 .lineinput {
-    display: grid; /* Itens um abaixo do outro */
+    display: grid;
     margin-bottom: 10px;
 }
 
@@ -39,7 +39,7 @@ input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    outline: 0; /* para quando clicar para digitar a borda nao ficar preto*/
+    outline: 0; 
 }
 
 button {
@@ -49,8 +49,8 @@ button {
     background-color: blueviolet;
     color: #FFF;
     border-radius: 3px;
-    font-weight: bold; /* para letra ficar mais forte */
-    transition: all ease 0.3; /*efeito lento de entrada no bottao */
+    font-weight: bold; 
+    transition: all ease 0.3; 
 }
 
 button:hover {

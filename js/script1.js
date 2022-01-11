@@ -1,13 +1,13 @@
 class Produto {
 
-    constructor(){ //funçao contrutora é a primeira a ser executada quando utiliza a classe acima
+    constructor(){ //funçao contrutora 
         this.id = 1;
         this.arrayProdutos = [];
         this.editId = null
     }
 
-    salvar() { // aqui em baixo todas as funçoes e metodos
-       let produto = this.lerDados(); // quando a funçao salvar for chamada o  primeiro item a ser lido é o "lerdados"
+    salvar() { // funçoes e metodos
+       let produto = this.lerDados(); //  funçao salvar 
 
        if(this.validaCampos(produto)) {
             if(this.editId == null) {
@@ -27,9 +27,8 @@ class Produto {
         tbody.innerText = '';
 
         for(let i = 0; i < this.arrayProdutos.length; i++ ) {
-            let tr = tbody.insertRow();// depois de percorrer cada array teremos que criar cada linha "insertRow" cria uma nova linha na nossa tabela
-            // noo caso dentro do "tbody"
-            let td_id = tr.insertCell();//esta funçao ira inserir uma nova coluna, e atribuir esta nova coluna a este "td_id"
+            let tr = tbody.insertRow();
+            let td_id = tr.insertCell();//esta funçao irá inserir uma nova coluna
             let td_produto = tr.insertCell();
             let td_valor = tr.insertCell();
             let td_acoes = tr.insertCell();
@@ -38,19 +37,18 @@ class Produto {
             td_produto.innerText = this.arrayProdutos[i].nomeProduto;
             td_valor.innerText = this.arrayProdutos[i].preco;
 
-            td_id.classList.add('center');//para adicionar uma classe do CSS de forma dinamica
+            td_id.classList.add('center'); //CSS de forma dinamica
             td_acoes.classList.add('center');
 
             let imgEdit = document.createElement('img');
             imgEdit.src = 'img/edit.png';
-            imgEdit.setAttribute("onclick", "produto.preparaEdicao("+ JSON.stringify(this.arrayProdutos[i]) +")");// para mandar todos esss dados para o HTML, por isso estamos convertendo para stringfy
+            imgEdit.setAttribute("onclick", "produto.preparaEdicao("+ JSON.stringify(this.arrayProdutos[i]) +")");
 
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/delet.png';
-            imgDelete.setAttribute("onclick", "produto.deletar("+ this.arrayProdutos[i].id +")"); //setatribute deve receber dois parametros "", "" o segundo sera referencia ao produto, para poder relacionar a funçao deletar
+            imgDelete.setAttribute("onclick", "produto.deletar("+ this.arrayProdutos[i].id +")");
 
             td_acoes.appendChild(imgEdit);
-            //como se fosse <td><img></td> imgEdit sendo filho de td_acoes
             td_acoes.appendChild(imgDelete);
 
         }
@@ -58,8 +56,8 @@ class Produto {
     }
 
     adicionar(produto) {
-        produto.preco = parseFloat(produto.preco) //para converter para números decimais
-        this.arrayProdutos.push(produto);// push vai pegar o elemento e aprimorar
+        produto.preco = parseFloat(produto.preco) 
+        this.arrayProdutos.push(produto);
         this.id++;
     }
 
@@ -83,7 +81,7 @@ class Produto {
     }
  
     lerDados() {
-        let produto = {} // a chave significa que será um objeto
+        let produto = {} 
 
         produto.id = this.id;
         produto.nomeProduto = document.getElementById('produto').value;
@@ -122,7 +120,7 @@ class Produto {
         
     }
 
-    deletar(id) { //o parametro deve ser passado para funçao deletar
+    deletar(id) { 
 
         if(confirm('Deseja deletar o produto do ID' +  id)) {
         
@@ -130,8 +128,8 @@ class Produto {
 
             for(let i = 0; i < this.arrayProdutos.length; i++) {
                 if(this.arrayProdutos[i].id == id) {
-                    this.arrayProdutos.splice(i, 1); //com slice é necessario passar dois argumentos para fazer a remoçao, o primeiro é o  indice que a gente quer deletar, o segundo é quantos registros a gente quer deletar
-                    tbody.deleteRow(i);// para atualizar a tabela quando o item é deletado, excluir a linha "TR" dentro da funçao é necessario passar o indice a ser deletado
+                    this.arrayProdutos.splice(i, 1); 
+                    tbody.deleteRow(i);
                 }
             } 
         }    
@@ -139,4 +137,4 @@ class Produto {
 
 }
 
-var produto = new Produto();// criando um objeto do tipo produto para poder instanciar com o botao de chamada
+var produto = new Produto();
